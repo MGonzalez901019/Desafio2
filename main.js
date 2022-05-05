@@ -2,18 +2,32 @@
 //se ingresa el nombre del alumno
 let nombreAlumno = "";
 
+function Alumno (nombre, nota)
+{
+    this.nombre = nombre,
+    this.nota = nota
+
+}
 
 do {
     //pido por prompt el nombre del alumno
     nombreAlumno = prompt("ingrese el nombre del alumno, no escriba nada para salir");
     
+
+    
+
     if (nombreAlumno != "")
     {
+     
     //llamo a la funcion que me calcula el promedio    
     let promedio = calculadoraPromedio();
     
+    //creo un objeto alumno1 que es donde se va a guardar el nombre y la nota y le asigno el nombre y promedio
+
+    const alumno1 = new Alumno (nombreAlumno,promedio);
+
     //llamo a la funcion que me imprime el promedio del alumno
-    imprimirPromedio (nombreAlumno, promedio);
+    imprimirPromedio (alumno1.nombre, alumno1.nota);
     }
 } while (nombreAlumno!= "");
 
